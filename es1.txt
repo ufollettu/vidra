@@ -1,0 +1,10 @@
+Scrivi un codice js che, utilizzando il servizio https://ip-api.com/,
+individui quali indirizzi IP presenti nel file json allegato sono italiani.
+
+Tre cose importanti:
+1. il tuo codice sarà eseguito in una cartella con dentro il file MOCK_DATA.json
+usando il comando: node TUO_FILE.js
+2. NON inviare l'output del programma, ma solo il sorgente
+3. usare funzionalità js non oltre la versione ES6
+
+Nota privacy: gli indirizzi IP sono stati generati casualmente.
