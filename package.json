@@ -6,7 +6,9 @@
   "scripts": {
     "promises": "webpack-dev-server --env dev --mode none --define AA=false",
     "asyncawait": "webpack-dev-server --env dev --mode none --define AA",
-    "build:prod": "webpack --env prod --mode production"
+    "build:prod": "webpack --env prod --mode production",
+    "docker-promises": "node_modules/.bin/webpack-dev-server --env dev --mode none --define AA=false --host 0.0.0.0",
+    "docker-asyncawait": "node_modules/.bin/webpack-dev-server --env dev --mode none --define AA --host 0.0.0.0"
   },
   "author": "mwieth",
   "license": "ISC",

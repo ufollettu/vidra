@@ -198,3 +198,24 @@ Secondo me bisogna scrivere pensando che altre persone metteranno mano al tuo co
 è vitale saper chiedere aiuto, in un team che lavora con scadenze ravvicinate i problemi sorgono quando qualcuno, per paura o eccessiva presunzione, non condivide i problemi che lo bloccano, danneggiando il lavoro del team tutto.
 
 Per ultimo, indico la passione per il codice, il voler fare quel passettino in più, anche se magari non è richiesto, perchè ci piace scrivere del codice fatto bene, per noi prima che per gli altri.
+
+-----
+### Docker Development
+
+Optionally, you can run the application in a Docker container.
+you don't need Node on your machine, just Docker v19.
+
+#### Build the image
+- run `docker image build ./ -t vidranode`
+
+#### Run the app (promises or asyncawait version)
+- run `docker run -p 8080:8080 --name vidraapp vidranode npm run docker-promises`
+- run `docker run -p 8080:8080 --name vidraapp vidranode npm run docker-asyncawait`
+
+The app is running at `http://0.0.0.0:8080/`
+
+#### Remove app container
+- run `docker container rm --force vidraapp`
+
+#### Remove image
+- run `docker image rm vidranode`
