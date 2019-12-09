@@ -30,7 +30,7 @@ Ho preferito utilizzare webpack per il server di sviluppo per avere gli oggetti 
 in JS le callback sono funzioni che vengono chiamate dopo l'esecuzione di una funzione: vengono passate ad una funzione ed eseguite dopo che la prima funzione ha terminato l'esecuzione.
 Se in JS ho due funzioni, e una ci mette più tempo dell'altra ad ritornare un valore, non importa l'ordine in cui le scrivo, l'output di una funzione che richiede più tempo di elaborazione arriverà dopo quella che ne richiede meno.
 
-```
+```javascript
   function printAll(){
     printString("A")
     printString("B")
@@ -41,7 +41,7 @@ Se in JS ho due funzioni, e una ci mette più tempo dell'altra ad ritornare un v
 
 Per utilizzare il risultato di una funzione che richiede molto tempo di elaborazione (ad esempio una chiamata asincrona a una API), posso passare a questa funzione una funzione di "callback" che verrà eseguita all'interno della prima. Così facendo sono sicuro di avere il risultato della prima funzione a disposizione della seconda:
 
-```
+```javascript
 
 function printString(string, callback){
   setTimeout(
@@ -75,7 +75,7 @@ Una promise può trovarsi in tre stati:
   - `rejected (rifiuta)`: la chiamata asincrona non ha restituito un valore (ad esempio per il verificarsi di un errore)
   - `pending`: quando non si trova in uno dei casi precedenti
 
-```
+```javascript
 function printString(string){
   return new Promise((resolve, reject) => {
     setTimeout(
@@ -102,7 +102,7 @@ Await/Async, introdotto con la versione ES7 di Javascript, è un cosiddetto synt
 
 Per utilizzare questo modo di scrivere bisogna scrivere `await` prima della funzione asincrona che stiamo andando ad eseguire e che ritorna una `Promise`, e flaggare come `async` la funzione che le utilizza (altrimenti viene lanciato un errore)
 
-```
+```javascript
 function printString(string){
   return new Promise((resolve, reject) => {
     setTimeout(
@@ -133,7 +133,7 @@ L'utilizzo di Async/Await rende il codice più chiaro e manutenibile rispetto ai
 
 Il Prototype è il modo che ha Javascript per creare degli oggetti che abbiano dei metodi ereditati da un oggetto base. Se ad esempio creo uno User e gli assegno il metodo info
 
-```
+```javascript
 const User = function(name, age) {
   this.name = name
   this.age = age
@@ -144,8 +144,8 @@ User.prototype.info = function() {
 }
 ```
 Poi posso utilizzare i metodi dell'Oggetto appena creato in un altro oggetto, che erediterà quindi le sue funzionalità, e potrà condividerne il prototype:
-```
 
+```javascript
 const Customer = function(name, age) {
   User.call(this)
   this.name = name
@@ -161,7 +161,7 @@ anna.info() // logga: 'Mi chiamo Anna e ho 24 anni'
 
 Dalla versione ES6 è possibile utilizzare le classi anche in JS per ottenere lo stesso risultato. Le classi in ES6 infatti non sono altro che syntactic sugar per scrivere in maniera più semplice il prototype di un oggetto:
 
-```
+```javascript
 class User {
   constructor(name, age) {
     this.name = name
